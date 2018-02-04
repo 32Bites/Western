@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 import sys, os
-
-
+sys.path.append("ipwndfu")
+import dfu
 #Credits
 def credits() :
 
@@ -107,13 +108,14 @@ def create_cfw() :
 
 #Pwned DFU
 def enter_pwned_dfu() :
-    
-    print("Be in dfu, then hit any key once in dfu.")
-    
-    ddffuu = raw_input("")
-    
-    os.system("clear && cd ipwndfu/ && ./ipwndfu -p")
-
+    device = dfu.acquire_device()
+    if 'PWND:[' in device.serial_number:
+        print 'Device is already in pwned DFU Mode. Not executing exploit.'
+    else:    
+         print("Be in dfu, then hit any key once in dfu.")
+         ddffuu = raw_input("")
+         os.system("clear && cd ipwndfu/ && ./ipwndfu -p")
+         print("Pwned")
 
 #24KPwn
 def install_24kpwn_exploit() :
