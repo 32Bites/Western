@@ -6,7 +6,7 @@ For license info, check the LICENSE file.
 
 ## Usage
 
-`cd` into the root directory of Western, then run `python western.py`
+`cd` into the root directory of Western, then run `python Western.py`
 
 ## Credit
 
